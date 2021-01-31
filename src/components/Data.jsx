@@ -1,11 +1,38 @@
-import React from 'react'
+const Data = [
+  {
+      id: 1,
+      name : "Beautiful design interface",
+      date :" Sun Jan 31 2021"
+  },
+  {
+      id: 2,
+      name : "Beautiful design interface",
+      date :" Sun Jan 31 2021"
+  },
+  {
+      id: 3,
+      name : "Beautiful design interface",
+      date :" Sun Jan 31 2021"
+  },
+  {
+      id: 4,
+      name : "Beautiful design interface",
+      date :" Sun Jan 31 2021"
+  },
+  {
+      id: 5,
+      name : "Beautiful design interface",
+      date :" Sun Jan 31 2021"
+  },
+  {
+      id: 6,
+      name : "Beautiful design interface",
+      date :" Sun Jan 31 2021"
+  }
 
-function Data() {
-    return (
-        <>
-            <h3>Event list</h3>
-        </>
-    )
-}
+
+]
+
+
 
 export default Data
