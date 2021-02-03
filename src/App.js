@@ -1,17 +1,18 @@
-import React, {useState} from 'react'
-import Data from './components/Data'
+import React, {useState} from 'react';
+import Data from './components/Data';
+import EventsList from './components/eventList'
 
 function App() {
    const eventNow = new Date().toDateString();
 
-   const [list, setList] = useState(Data);
+   const [details, setDetails] = useState(Data);
 
     return (
         <main>
             <section className='container'>
-            <h1>{list.length}Events this week</h1>
+            <h1>{details.length}Events this week</h1>
             <h3>{eventNow}</h3>
-             <Data list={list}/>
+             <EventsList details={details}/>
             <button>View all events</button>
             </section>
             
