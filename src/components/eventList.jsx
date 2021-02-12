@@ -1,22 +1,12 @@
 import React from 'react'
 
-function eventList({details}) {
+function eventList(props) {
     return (
-        <>
-            {details.map((detailsList) =>{
-        const {id, name, date, image} = detailsList;
-        return (
-            <article key={id} className="person">
-                <img src={image} alt={name}/>
-                <div>
-                    <h4>{name}</h4>
-                    <p>{date}</p>
-                </div>
-
-            </article>
-        );
-            })}
-        </>
+        <div>
+            <h3>{props.title}</h3>
+            <p>{props.content} </p>
+            <input type="date" name="" id=""/>
+        </div>
     )
 }
 
