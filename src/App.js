@@ -4,12 +4,7 @@ import EventList from './components/EventList'
 import listdetails from './components/listdetails'
 
 
-function createEvent(newEvent) {
-  return   <EventList 
-  title = {newEvent.title}
-  content ={newEvent.content}
-  pickDate = ""/>
-}
+
 
 
 
@@ -17,9 +12,17 @@ function App() {
   return (
     <div>
       <div className="container">
-
-      {  listdetails.map(createEvent)}
+        {listdetails.map((newList =>{
+          return (
+            <EventList
+            key = {newList.key}
+            content = {newList.content}
+            title ={newList.title} />
+          )
+        }))}
       
+       
+  
       </div>
 
 

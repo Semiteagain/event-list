@@ -5,7 +5,6 @@ function eventList(props) {
         <div>
             <h3>{props.title}</h3>
             <p>{props.content} </p>
-            <input type="date" name="" id=""/>
         </div>
     )
 }
