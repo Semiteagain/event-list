@@ -41,7 +41,7 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   --max-width: 1170px;
   --fixed-width: 450px;
-  --clr-pink: #f28ab2;
+ 
 }
 /*
 =============== 
@@ -59,10 +59,20 @@ Global Styles
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: var(--clr-pink);
+  background-color: var(--clr-grey-1);
   color: var(--clr-grey-9);
   line-height: 1.5;
   font-size: 0.875rem;
+  background: radial-gradient(closest-side,#F161A3 32% ,transparent) top center/60px 60px,
+  radial-gradient(closest-side,#FA7C64 96%,transparent) bottom center/200px 200px;
+  background-repeat:no-repeat;
+}
+
+.box {
+  width:200px;
+  height:200px;
+  border:1px solid;
+ 
 }
 ul {
   list-style-type: none;
@@ -138,6 +148,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .container {
@@ -154,44 +165,30 @@ main {
   text-transform: none;
   margin-bottom: 2rem;
 }
-
-.heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-.heading h1 {
-  transform: rotate(2deg);
-  padding: 0.2rem 1.2rem;
-  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-  background-color: #fdcb6e;
-  font-size: 1.5rem;
-}
-.person {
+.list-event {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 0.75rem;
   margin-bottom: 1.5rem;
   align-items: center;
 }
-.person img {
+.list-event img {
   width: 75px;
   height: 75px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: var(--light-shadow);
 }
-.person h4 {
+.list-event h4 {
   margin-bottom: 0.35rem;
 }
-.person p {
+.list-event p {
   margin-bottom: 0;
 }
 .container button {
   color: var(--clr-white);
   display: block;
-  width: 100%;
+  width: 75%;
   border-color: transparent;
   background: var(--clr-pink);
   margin: 2rem auto 0 auto;
@@ -203,72 +200,3 @@ main {
   outline: 1px solid rgba(242, 138, 178, 0.8);
   cursor: pointer;
 }
-
-
-form {
-  position: relative;
-  width: 480px;
-  margin: 30px auto 20px auto;
-  background: #fff;
-  padding: 15px;
-  border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
-}
-form input,
-form textarea {
-  width: 100%;
-  border: none;
-  padding: 4px;
-  outline: none;
-  font-size: 1.2em;
-  font-family: inherit;
-  resize: none;
-}
-form button {
-  position: absolute;
-  right: 18px;
-  bottom: -18px;
-  background: #f5ba13;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  outline: none;
-}
-
-/* form.create-event {
-  position: relative;
-  width: 480px;
-  margin: 30px auto 20px auto;
-  background: #fff;
-  padding: 15px;
-  border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
-}
-form.create-event input,
-form.create-event textarea {
-  width: 100%;
-  border: none;
-  padding: 4px;
-  outline: none;
-  font-size: 1.2em;
-  font-family: inherit;
-  resize: none;
-}
-form.create-event button {
-  position: absolute;
-  right: 18px;
-  bottom: -18px;
-  background: #f5ba13;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  outline: none;
-} */

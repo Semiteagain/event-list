@@ -2,8 +2,8 @@ import React from 'react'
 
 function eventList(props) {
     return (
-        <div>
-            <h3>{props.title}</h3>
+        <div className="list-event">
+            <h4>{props.title}</h4>
             <p>{props.content} </p>
         </div>
     )
