@@ -5,7 +5,7 @@ function Footer() {
     const currentYear = d.getFullYear()
     return (
         <div>
-            <footer> &copy; {currentYear}</footer>
+            <footer className="footer"> &copy; {currentYear}</footer>
         </div>
     )
 }

@@ -1,10 +1,13 @@
 import React from 'react'
 
 function eventList(props) {
+    const d = new Date();
+    const currentDay = d.getMonth();
     return (
         <div className="list-event">
-            <h4>{props.title}</h4>
+            <h3>{props.title}</h3>
             <p>{props.content} </p>
+            <h4>{currentDay}</h4>
         </div>
     )
 }
