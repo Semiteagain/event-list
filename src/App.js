@@ -16,13 +16,19 @@ function App() {
 
   const [time, setTime] = useState(currentDay);
 
-  
+  const [showAll, setShowAll] = useState(listdetails.length)
+
+    function handleClick() {
+        setShowAll(e =>{
+      
+        })
+    }    
   return (
     
      <main>
        <div className="box">                 
        <section className="container">
-         
+       <h2> {showAll} Event Today</h2>
          {listdetails.map(((newList, index) => {
            return <EventList 
            key = {newList.key}
@@ -32,7 +38,7 @@ function App() {
 
           />
          }))}
-
+           <button onClick={handleClick}>View all events</button>
     
        </section>
        <Footer />
