@@ -1,6 +1,5 @@
 
 
-
 const listdetails= [
     {   key : 1,
         title : "Designing Beautiful Interface",
@@ -11,25 +10,25 @@ const listdetails= [
 
     {
         key : 2,
-        title : "This is the Title",
+        title : "Designing Beautiful Interface",
         content : "This is the content",
   
     },
     {
         key : 3,
-        title : "This is the Title",
+        title : "Designing for Accessibility",
         content : "This is the content",
       
     },
     {
         key : 4,
-        title : "This is the Title",
+        title : "Designing for Accessibility",
         content : "This is the content",
      
     },
     {
         key : 5,
-        title : "This is the Title",
+        title : "Designing Beautiful Interface",
         content : "This is the content",
     
     },
