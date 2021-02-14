@@ -17,28 +17,51 @@ function App() {
   const [time, setTime] = useState(currentDay);
 
   const [showAll, setShowAll] = useState(listdetails.length)
+  const [isMouseOver, setIsMouseOver] = useState(false)
 
     function handleClick() {
-        setShowAll(e =>{
-      
+        setShowAll(() =>{
+          return listdetails.length = 3;
         })
     }    
+
+
+    function handleMouseOver() {
+      setIsMouseOver(true)
+    }
+
+    function handleMouseOut() {
+      setIsMouseOver(false)
+    }
+
+    function handleChange() {
+       setTime(currentDay)
+    }
+
+
+
   return (
     
      <main>
        <div className="box">                 
        <section className="container">
        <h2> {showAll} Event Today</h2>
-         {listdetails.map(((newList, index) => {
+
+
+         {listdetails.map(((newList) => {
            return <EventList 
            key = {newList.key}
            title = {newList.title}
             date= {time}
-
-
           />
          }))}
-           <button onClick={handleClick}>View all events</button>
+           <button 
+           style = {{backgroundColor : isMouseOver ? "#FA7C64" : "#F161A3"}}
+          onClick={handleClick}
+           onMouseOver={handleMouseOver}
+           onMouseOut = {handleMouseOut}
+           onChange = {handleChange}
+           >View all events</button>
     
        </section>
        <Footer />
