@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Footer from './components/Footer'
 import listdetails from './components/listdetails'
 import EventList from './components/EventList'
@@ -8,24 +8,32 @@ import EventList from './components/EventList'
 
 
 function App() {
+
+  const d = new Date();
+  let days= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const currentDay = days[d.getDay()] +' ' + d.toLocaleTimeString() + ' ' + d.toLocaleDateString();
+ 
+
+  const [time, setTime] = useState(currentDay);
+
+  
   return (
     
      <main>
        <div className="box">                 
        <section className="container">
-         <h2>{listdetails.length} Event Today</h2>
-
-
-         {listdetails.map((newList => {
+         
+         {listdetails.map(((newList, index) => {
            return <EventList 
            key = {newList.key}
            title = {newList.title}
-           content = {newList.content}
-          currentDAy = {newList.currentDAy}
+            date= {time}
+
+
           />
          }))}
 
-       <button >View all events</button>
+    
        </section>
        <Footer />
        </div>    

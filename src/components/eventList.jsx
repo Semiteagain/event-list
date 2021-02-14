@@ -1,15 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function eventList(props) {
-    const d = new Date();
-    const currentDay = d.getMonth();
+
+
+function EventList(props) {
+    const [headingText, setHeading] = useState()
+
+    function handleClick() {
+        console.log("you click")
+    }    
+
     return (
         <div className="list-event">
-            <h3>{props.title}</h3>
-            <p>{props.content} </p>
-            <h4>{currentDay}</h4>
+            
+            <h4>{props.title}</h4>
+            <p>{props.date} </p>
+            <button onClick={handleClick}>View all events</button>
+          
         </div>
     )
 }
 
-export default eventList
+export default EventList
