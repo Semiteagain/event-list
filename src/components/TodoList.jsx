@@ -1,46 +1,51 @@
 import React, { useState } from "react";
 
-function Todolist() {
-  const [addText, setaddText] = useState({
-    title: "",
-    content: "",
-  });
-   
- function handleText(e) {
-     const {name, value} = e.target
-
-     setaddText (prevText => {
-         return {
-             ...prevText,
-             [name] : value
-         }
+function Todolist(props) {
+  
+     const [addText, setaddText] = useState({
+         title : '',
+         content : ''
      })
- }
 
+    function handleTextChange(e) {
+        const {name, value} = e.target
 
+        setaddText(prevText =>{
+            return {
+                ...prevText,
+                [name] : value
+            }
+        })
+    }
+
+    function submitText(e) {
+        props.onAddText(addText)
+        e.preventDefualt();
+    }
 
   return (
     <>
-      <form action="">
-        <input
-          type="text"
-          name="title"
-          value={addText.title}
-          placeholder="title text here"
-          onChange ={handleText}
-        />
-
-        <textarea 
-        name="content" 
-        id="content" 
-        rows="2"
-         placeholder ='enter content'
-         value={addText.content}
-         onChange = {handleText}
+     <div className='list-event'>
+         <input 
+         type="text"
+         name= 'title'
+         placeholder='title'
+         value={addText.title}
+         onChange= {handleTextChange}
          />
 
-         ,<button type="submit" >Add</button>
-      </form>
+
+         <textarea 
+         name="content" 
+         id="" 
+         rows="2"
+         placeholder='content'
+         value={addText.content}
+         onChange= {handleTextChange}
+         />
+
+         <button type='submit' onClick={submitText}>Add Text</button>
+     </div>
     </>
   );
 }

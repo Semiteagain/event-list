@@ -9,6 +9,7 @@ function EventList(props) {
         <div className="list-event">
             
             <h4>{props.title}</h4>
+            <p>{props.content}</p>
             <p>{props.date} </p>
            
           

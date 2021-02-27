@@ -20,7 +20,7 @@ function App() {
   const [showAll, setShowAll] = useState(listdetails.length)
   const [isMouseOver, setIsMouseOver] = useState(false)
 
-  
+  const [addText, setaddText] = useState('')
 
     function handleClick() {
         setShowAll(() =>{
@@ -41,7 +41,11 @@ function App() {
        setTime(currentDay)
     }
 
-
+    function moreText(newText) {
+      setaddText(prevText =>{
+        return [...prevText, newText]
+      })
+    }
 
   return (
     
@@ -49,9 +53,16 @@ function App() {
        <div className="box">                 
        <section className="container">
        <h2> {showAll} Event Today</h2>
-           
-         <Todolist  />
-
+            
+         <Todolist 
+            onAddText= {moreText}
+         />
+          {addText.map((itemList) =>{
+            return <EventList 
+               title = {itemList.title}
+               content = {itemList.content}
+            />
+          })}
          {listdetails.map(((newList) => {
            return <EventList 
            key = {newList.key}
