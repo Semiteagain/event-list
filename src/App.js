@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Footer from './components/Footer'
 import listdetails from './components/listdetails'
 import EventList from './components/EventList'
+import Todolist from './components/TodoList';
 
 
 
@@ -18,6 +19,8 @@ function App() {
 
   const [showAll, setShowAll] = useState(listdetails.length)
   const [isMouseOver, setIsMouseOver] = useState(false)
+
+  
 
     function handleClick() {
         setShowAll(() =>{
@@ -46,7 +49,8 @@ function App() {
        <div className="box">                 
        <section className="container">
        <h2> {showAll} Event Today</h2>
-
+           
+         <Todolist  />
 
          {listdetails.map(((newList) => {
            return <EventList 
