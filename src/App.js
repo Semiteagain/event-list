@@ -6,6 +6,13 @@ import Todolist from './components/TodoList';
 
 
 
+function cretaeTextItem(createText) {
+  return <EventList 
+     title = {createText.title}
+     content = {createText.content}
+  />
+}
+
 
 
 function App() {
@@ -20,7 +27,7 @@ function App() {
   const [showAll, setShowAll] = useState(listdetails.length)
   const [isMouseOver, setIsMouseOver] = useState(false)
 
-  const [addText, setaddText] = useState('')
+  const [newAddText, setNewAddText] = useState('')
 
     function handleClick() {
         setShowAll(() =>{
@@ -42,7 +49,7 @@ function App() {
     }
 
     function moreText(newText) {
-      setaddText(prevText =>{
+      setNewAddText(prevText =>{
         return [...prevText, newText]
       })
     }
@@ -57,16 +64,14 @@ function App() {
          <Todolist 
             onAddText= {moreText}
          />
-          {addText.map((itemList) =>{
-            return <EventList 
-               title = {itemList.title}
-               content = {itemList.content}
-            />
-          })}
+        {newAddText.map(cretaeTextItem)}
+         
+      
          {listdetails.map(((newList) => {
            return <EventList 
            key = {newList.key}
            title = {newList.title}
+           content = {newList.content}
             date= {time}
           />
          }))}
