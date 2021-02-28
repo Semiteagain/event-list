@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 function Todolist(props) {
+
+
+
+    
   
      const [addText, setaddText] = useState({
          title : '',
@@ -19,13 +23,19 @@ function Todolist(props) {
     }
 
     function submitText(e) {
-        props.onAddText(addText)
-        e.preventDefualt();
+        props.onAddText(addText);
+        setaddText({
+            title : '',
+            content : ''
+        })
+        e.preventDefault();
     }
 
+   
   return (
     <>
-     <div className='list-event'>
+    
+         <form >
          <input 
          type="text"
          name= 'title'
@@ -37,7 +47,6 @@ function Todolist(props) {
 
          <textarea 
          name="content" 
-         id="" 
          rows="2"
          placeholder='content'
          value={addText.content}
@@ -45,7 +54,9 @@ function Todolist(props) {
          />
 
          <button type='submit' onClick={submitText}>Add Text</button>
-     </div>
+         </form>
+       
+   
     </>
   );
 }

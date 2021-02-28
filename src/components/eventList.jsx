@@ -6,9 +6,9 @@ function EventList(props) {
     
 
     return (
-        <div className="list-event">
+        <div className="note">
             
-            <h4>{props.title}</h4>
+            <h1>{props.title}</h1>
             <p>{props.content}</p>
             <p>{props.date} </p>
            
@@ -17,4 +17,4 @@ function EventList(props) {
     )
 }
 
-export default EventList
+export default EventList;

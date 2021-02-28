@@ -1,52 +1,36 @@
 import React, {useState} from 'react'
 import Footer from './components/Footer'
-import listdetails from './components/listdetails'
 import EventList from './components/EventList'
 import Todolist from './components/TodoList';
 
 
 
-function cretaeTextItem(createText) {
-  return <EventList 
-     title = {createText.title}
-     content = {createText.content}
-  />
-}
 
 
 
 function App() {
 
-  const d = new Date();
-  let days= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  const currentDay = days[d.getDay()] +' ' + d.toLocaleTimeString() + ' ' + d.toLocaleDateString();
- 
 
-  const [time, setTime] = useState(currentDay);
 
-  const [showAll, setShowAll] = useState(listdetails.length)
+  
   const [isMouseOver, setIsMouseOver] = useState(false)
 
-  const [newAddText, setNewAddText] = useState('')
-
-    function handleClick() {
-        setShowAll(() =>{
-          return listdetails.length = 3;
-        })
-    }    
+  const [newAddText, setNewAddText] = useState([])
+  
 
 
-    function handleMouseOver() {
-      setIsMouseOver(true)
-    }
+  function handleMouseOver() {
+    setIsMouseOver(true)
+  }
 
-    function handleMouseOut() {
-      setIsMouseOver(false)
-    }
+  function handleMouseOut() {
+    setIsMouseOver(false)
+  }
 
-    function handleChange() {
-       setTime(currentDay)
-    }
+ 
+  function handleClick() {
+     
+  }   
 
     function moreText(newText) {
       setNewAddText(prevText =>{
@@ -59,28 +43,28 @@ function App() {
      <main>
        <div className="box">                 
        <section className="container">
-       <h2> {showAll} Event Today</h2>
+       <h2> {newAddText.length} Event This Weeek</h2>
             
          <Todolist 
-            onAddText= {moreText}
+          onAddText = {moreText}
          />
-        {newAddText.map(cretaeTextItem)}
-         
-      
-         {listdetails.map(((newList) => {
+    
+         {newAddText.map((newListText, linear) =>{
            return <EventList 
-           key = {newList.key}
-           title = {newList.title}
-           content = {newList.content}
-            date= {time}
-          />
-         }))}
+           key = {linear}
+           id = {linear}
+            title = {newListText.title}
+            content = {newListText.content}
+            date = {newListText.date}
+           />
+         })}
+      
+        
            <button 
            style = {{backgroundColor : isMouseOver ? "#FA7C64" : "#F161A3"}}
           onClick={handleClick}
            onMouseOver={handleMouseOver}
            onMouseOut = {handleMouseOut}
-           onChange = {handleChange}
            >View all events</button>
     
        </section>
@@ -92,3 +76,11 @@ function App() {
 }
 
 export default App
+
+
+
+
+
+ 
+
+
